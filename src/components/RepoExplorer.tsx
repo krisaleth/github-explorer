@@ -64,22 +64,25 @@ const RepoExplorer = () => {
     return (
         <div className={containerClass}>
             <div className={`max-w-7xl mx-auto ${hasSearched ? '' : 'w-full'}`}>
-                <h1 className="text-4xl font-bold text-white mb-2">Github Repository Explorer</h1>
-                <p className="text-gray-400">Search and explore Github repositories</p>
+                <div className="text-center mb-8">
+                    <h1 className="text-4xl font-bold text-white mb-2">Github Repository Explorer</h1>
+                    <p className="text-gray-400">Search and explore Github repositories</p>
+                </div>
+                <SearchForm value={query} onChange={(e) => setQuery(e.target.value)} onSubmit={handleSearch} placeholder="Search repositories (e.g, react, python machine learning)..." loading={loading}/>
+
+                {hasSearched && <RepoFilters sort={sort} order={order} onSortChange={(v) => handleFilterChange('sort', v)} onOrderChange={(v) => handleFilterChange('order', v)} disabled={loading}/>}
+                <ErrorMessage message={error} className="max-w-3xl"/>
+                {hasSearched && !loading && <div className="mb-6 text-center"><p className="text-gray-400">Found <span className="text-white font-semibold">{totalCount.toString()}</span> repositories</p></div>}
+                {repos && repos.items.length > 0 && !loading && (
+                    <>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                            {repos?.items?.map((repo) => <RepoCard key={repo.id} repo={repo} showOwner={true} variant="enhanced" dateFormat={{ year: 'numeric', month: 'short', day:'numeric' }} />)}
+                        </div>
+                        <Pagination currentPage={page} totalPages={totalPages} onPageChange={(pageNum) => performSearch(pageNum)} loading={loading} />   
+                    </>
+                )}
+                {hasSearched && repos?.total_count === 0 && !loading && !error && <div className="text-center py-12"><p className="text-gray-400 text-lg ">No repository found. Try a different search query.</p></div>}
             </div>
-            <SearchForm value={query} onChange={(e) => setQuery(e.target.value)} onSubmit={handleSearch} placeholder="Search repositories (e.g, react, python machine learning)..." loading={loading}/>
-            {hasSearched && <RepoFilters sort={sort} order={order} onSortChange={(v) => handleFilterChange('sort', v)} onOrderChange={(v) => handleFilterChange('order', v)} disabled={loading}/>}
-            <ErrorMessage message={error} className="max-w-3xl"/>
-            {hasSearched && !loading && <div className="mb-6 text-center"><p className="text-gray-400">Found <span className="text-white font-semibold">{totalCount.toString()}</span> repositories</p></div>}
-            {repos && repos.items.length > 0 && !loading && (
-                <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        {repos?.items?.map((repo) => <RepoCard key={repo.id} repo={repo} showOwner={true} variant="enhanced" dateFormat={{ year: 'numeric', month: 'short', day:'numeric' }} />)}
-                    </div>
-                    <Pagination currentPage={page} totalPages={totalPages} onPageChange={(pageNum) => performSearch(pageNum)} loading={loading} />   
-                </>
-            )}
-            {hasSearched && repos?.total_count === 0 && !loading && !error && <div className="text-center py-12"><p className="text-gray-400 text-lg ">No repository found. Try a different search query.</p></div>}
         </div>
     )
 }

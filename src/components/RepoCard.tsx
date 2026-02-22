@@ -54,9 +54,9 @@ const RepoCard = ({ repo, showOwner = false, dateFormat = {year: 'numeric', mont
             </div>
             {repo.description && <p className={`text-gray-400 text-sm mb-4 ${descriptionClamp}`}>{repo.description}</p>}
             <div className="flex flex-col gap-2">
-                {repo.language && <div className='flex items-center text-sm text-gray-500'><span className="w-3 h-3 rounded-full bg-blue-500 mr-2">{repo.language}</span></div>}
+                {repo.language && <div className='flex items-center text-sm text-gray-500'><span className="w-3 h-3 rounded-full bg-blue-500 mr-2"></span>{repo.language}</div>}
                 <div className={statLayout}>
-                    <span className='flex items-center'>
+                    <span className='flex items-center gap-1'>
                         <FaStar className='w-4 h-4 mr-1'/>{
                             formatNumber(repo.stargazers_count)
                         }

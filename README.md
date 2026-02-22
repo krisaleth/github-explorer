@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# 🚀 GitHub Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance GitHub discovery tool built with React 18, TypeScript, and Tailwind CSS. This application provides a seamless interface to search for repositories and explore detailed developer profiles using the GitHub REST API.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://kris-github-explorer.vercel.app/
+## ✨ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Advanced Repository Search: Search millions of repos with real-time results.
 
-## React Compiler
+    Dynamic Sorting: Filter by Stars, Forks, or Help-wanted issues, with support for ascending/descending order.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    Detailed Profile Viewer: View user bios, organizations, and social statistics (Followers/Following) in a sleek glassmorphism card.
 
-## Expanding the ESLint configuration
+    Smart Pagination: Efficiently browse through results with an optimized pagination system.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    Robust Error Handling: Custom error boundaries and user-friendly messages for API rate limits and failed fetches.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    Responsive Design: Fully optimized for all screen sizes using Tailwind's utility-first framework.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Technical Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+    Frontend: React (Hooks, Functional Components)
+
+    Type Safety: TypeScript (Strict interfaces for API responses)
+
+    Styling: Tailwind CSS (featuring dark mode and custom gradients)
+
+    Icons: React Icons (Font Awesome)
+
+    Deployment: Vercel (Continuous Deployment)
+
+## 📂 Project Structure
+```
+  src/
+  ├── components/     # Reusable UI parts (RepoCard, SearchForm, Pagination, etc.)
+  ├── services/       # GitHub API integration & response handling logic
+  ├── models/         # TypeScript interfaces (SearchResponse, GithubRepo, GitHubProfile)
+  ├── utils/          # Utility functions (date formatting, etc.)
+  └── App.tsx         # Root component and layout management
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Local Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    Clone the Repo:
+    ```bash
+    git clone https://github.com/krisaleth/github-explorer.git
+    cd github-explorer
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    Install Dependencies:
+    ```bash
+    npm install
+    ```
+
+    Launch Development Server:
+    ```bash
+    npm run dev
+    ```
+
+## 📝 GitHub API Rate Limit Note
+
+This app uses the public GitHub API. Unauthenticated requests are limited to 60 per hour.
+
+    If you encounter a 403 error, the rate limit has likely been reached.
+
+    To fix this, you can configure a Personal Access Token in your environment variables.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
+
+Built with ❤️ by krisaleth

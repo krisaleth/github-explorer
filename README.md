@@ -41,22 +41,22 @@ A modern, high-performance GitHub discovery tool built with React 18, TypeScript
 ## 📦 Local Installation
   Clone the Repo:
 
-    ```bash
-    git clone https://github.com/krisaleth/github-explorer.git
-    cd github-explorer
-    ```
+  ```bash
+  git clone https://github.com/krisaleth/github-explorer.git
+  cd github-explorer
+  ```
 
   Install Dependencies:
 
-    ```bash
-    npm install
-    ```
+  ```bash
+  npm install
+  ```
 
   Launch Development Server:
 
-    ```bash
-    npm run dev
-    ```
+  ```bash
+  npm run dev
+  ```
 
 ## 📝 GitHub API Rate Limit Note
 

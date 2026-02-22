@@ -4,30 +4,29 @@ A modern, high-performance GitHub discovery tool built with React 18, TypeScript
 
 🔗 Live Demo: https://kris-github-explorer.vercel.app/
 ## ✨ Key Features
+  Advanced Repository Search: Search millions of repos with real-time results.
 
-    Advanced Repository Search: Search millions of repos with real-time results.
+  Dynamic Sorting: Filter by Stars, Forks, or Help-wanted issues, with support for ascending/descending order.
 
-    Dynamic Sorting: Filter by Stars, Forks, or Help-wanted issues, with support for ascending/descending order.
+  Detailed Profile Viewer: View user bios, organizations, and social statistics (Followers/Following) in a sleek glassmorphism card.
 
-    Detailed Profile Viewer: View user bios, organizations, and social statistics (Followers/Following) in a sleek glassmorphism card.
+  Smart Pagination: Efficiently browse through results with an optimized pagination system.
 
-    Smart Pagination: Efficiently browse through results with an optimized pagination system.
+  Robust Error Handling: Custom error boundaries and user-friendly messages for API rate limits and failed fetches.
 
-    Robust Error Handling: Custom error boundaries and user-friendly messages for API rate limits and failed fetches.
-
-    Responsive Design: Fully optimized for all screen sizes using Tailwind's utility-first framework.
+  Responsive Design: Fully optimized for all screen sizes using Tailwind's utility-first framework.
 
 ## 🛠️ Technical Stack
 
-    Frontend: React (Hooks, Functional Components)
+  Frontend: React (Hooks, Functional Components)
 
-    Type Safety: TypeScript (Strict interfaces for API responses)
+  Type Safety: TypeScript (Strict interfaces for API responses)
 
-    Styling: Tailwind CSS (featuring dark mode and custom gradients)
+  Styling: Tailwind CSS (featuring dark mode and custom gradients)
 
-    Icons: React Icons (Font Awesome)
+  Icons: React Icons (Font Awesome)
 
-    Deployment: Vercel (Continuous Deployment)
+  Deployment: Vercel (Continuous Deployment)
 
 ## 📂 Project Structure
 ```
@@ -40,19 +39,21 @@ A modern, high-performance GitHub discovery tool built with React 18, TypeScript
 ```
 
 ## 📦 Local Installation
+  Clone the Repo:
 
-    Clone the Repo:
     ```bash
     git clone https://github.com/krisaleth/github-explorer.git
     cd github-explorer
     ```
 
-    Install Dependencies:
+  Install Dependencies:
+
     ```bash
     npm install
     ```
 
-    Launch Development Server:
+  Launch Development Server:
+
     ```bash
     npm run dev
     ```
@@ -61,9 +62,9 @@ A modern, high-performance GitHub discovery tool built with React 18, TypeScript
 
 This app uses the public GitHub API. Unauthenticated requests are limited to 60 per hour.
 
-    If you encounter a 403 error, the rate limit has likely been reached.
+  If you encounter a 403 error, the rate limit has likely been reached.
 
-    To fix this, you can configure a Personal Access Token in your environment variables.
+  To fix this, you can configure a Personal Access Token in your environment variables.
 
 ## 🤝 Contributing
 

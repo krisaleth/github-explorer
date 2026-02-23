@@ -68,7 +68,7 @@ const RepoExplorer = () => {
                     <h1 className="text-4xl font-bold text-white mb-2">Github Repository Explorer</h1>
                     <p className="text-gray-400">Search and explore Github repositories</p>
                 </div>
-                <SearchForm value={query} onChange={(e) => setQuery(e.target.value)} onSubmit={handleSearch} placeholder="Search repositories (e.g, react, python machine learning)..." loading={loading}/>
+                <SearchForm value={query} onChange={(e) => setQuery(e.target.value)} onSubmit={handleSearch} placeholder="Search repositories (e.g, React, Python, Machine Learning)..." loading={loading}/>
 
                 {hasSearched && <RepoFilters sort={sort} order={order} onSortChange={(v) => handleFilterChange('sort', v)} onOrderChange={(v) => handleFilterChange('order', v)} disabled={loading}/>}
                 <ErrorMessage message={error} className="max-w-3xl"/>

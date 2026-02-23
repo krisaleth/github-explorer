@@ -14,7 +14,7 @@ const RepoFilters = ({sort, order, onSortChange, onOrderChange, disabled}: RepoF
     return (
         <div className="flex flex-wrap items-center gap-4 mb-6 justify-center">
             <div className="flex items-center gap-2">
-                ,<FaSort className="text-gray-400 "/>
+                <FaSort className="text-gray-400 "/>
                 <label className="text-gray-400 text-sm">Sort by:</label>
                 <select value={sort} onChange={(e) => onSortChange(e.target.value)} disabled={disabled} className={selectClass}>
                     <option value="stars">Stars</option>

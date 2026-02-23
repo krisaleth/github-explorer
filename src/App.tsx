@@ -2,7 +2,8 @@ import { useState } from "react";
 import NavButton from "./components/NavButton";
 import ProfileViewer from "./components/ProfileViewer";
 import RepoExplorer from "./components/RepoExplorer";
-
+import { SpeedInsights } from "@vercel/speed-insights/vue";
+import { Analytics } from "@vercel/analytics/vue";
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
         </div>
       </nav>
       <main className="flex-1 overflow-auto">{activeTab === 'profile' ? <ProfileViewer/> : <RepoExplorer/>}</main>
+      <SpeedInsights/>
+      <Analytics/>
     </div>
   )
 }

@@ -2,8 +2,10 @@ import { useState } from "react";
 import NavButton from "./components/NavButton";
 import ProfileViewer from "./components/ProfileViewer";
 import RepoExplorer from "./components/RepoExplorer";
+import { SpeedInsights } from '@vercel/speed-insights/react'
+import { Analytics } from "@vercel/analytics/react"
 
-function App() {
+function App() { 
   const [activeTab, setActiveTab] = useState('profile');
 
   return (
@@ -21,7 +23,8 @@ function App() {
       </nav>
       <main className="flex-1 overflow-auto">{activeTab === 'profile' ? <ProfileViewer/> : <RepoExplorer/>}</main>
       
-      
+      <SpeedInsights/>
+      <Analytics/>
     </div>
   )
 }

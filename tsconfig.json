@@ -3,5 +3,12 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+  },
+  "exclude": [
+    "node_modules",
+    "node_modules/@vercel/speed-insights"
   ]
 }

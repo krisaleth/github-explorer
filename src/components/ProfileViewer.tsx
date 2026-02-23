@@ -93,7 +93,7 @@ const ProfileViewer = () => {
                                         <Icon className={`${iconClass} shrink-0`}/>
                                         <div className={isLink ? "flex-1 min-w-0" : ""}>
                                             <div className="text-xs text-gray-500 uppercase tracking-wide">{label}</div>
-                                            {isLink ? <a href={value} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline font-semibold truncate block">{value}</a> : <div className="font-semibold">{value}</div>}
+                                            {isLink ? <a href={`https://${value}`} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline font-semibold truncate block">{value}</a> : <div className="font-semibold">{value}</div>}
                                         </div>
                                     </div>
                                 ))}

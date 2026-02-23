@@ -2,7 +2,6 @@
 
 A modern, high-performance GitHub discovery tool built with React 18, TypeScript, and Tailwind CSS. This application provides a seamless interface to search for repositories and explore detailed developer profiles using the GitHub REST API.
 
-🔗 Live Demo: https://kris-github-explorer.vercel.app/
 ## ✨ Key Features
   Advanced Repository Search: Search millions of repos with real-time results.
 
